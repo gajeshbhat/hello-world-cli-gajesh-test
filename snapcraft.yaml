@@ -1,0 +1,19 @@
+name: hello-snap
+base: core22
+version: '0.1'
+summary: A simple Snapcraft test
+description: |
+  This is a very simple snap built from the GNU hello program,
+  useful for testing Snapcraft pipelines.
+
+grade: devel
+confinement: devmode
+
+parts:
+  hello:
+    plugin: autotools
+    source: http://ftp.gnu.org/gnu/hello/hello-2.12.tar.gz
+
+apps:
+  hello:
+    command: bin/hello
